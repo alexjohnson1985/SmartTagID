@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Scan-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SmartTagID" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,6 +31,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcv-lH-0xN">
+                                <rect key="frame" x="0.0" y="548" width="414" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="scanButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="AxT-b4-wQ1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2f-K7-Vcb">
+                                <rect key="frame" x="36" y="180" width="342" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -41,13 +57,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="scannedTagID" destination="k2f-K7-Vcb" id="G9t-eV-UCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.38043478260875"/>
         </scene>
-        <!--Second-->
+        <!--Active Items-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="SmartTagID" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Active Items" image="second" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
