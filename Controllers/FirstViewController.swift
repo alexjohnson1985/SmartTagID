@@ -9,20 +9,18 @@
 import UIKit
 import CoreNFC
 
-// Reference the found NFC messages
-var nfcMessages: [[NFCNDEFMessage]] = []
-
 class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
-    @IBOutlet weak var scannedTagID: UILabel!
+    @IBOutlet weak var scannedItemID: UILabel!
     
     var nfcSession: NFCNDEFReaderSession!
-    var scannedTagIDText = "Tap 'Scan' button below then place tag behind top of phone to read"
+    var initialInstruction = "Tap 'Scan' button below to start tagging"
+    var activeItemList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scannedTagID.text = scannedTagIDText
+        scannedItemID.text = initialInstruction
     }
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {
@@ -30,7 +28,7 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         // A custom description that helps users understand how they can use NFC reader mode in your app.
         self.nfcSession.alertMessage = "Hold item behind top of phone to detect"
         self.nfcSession.begin()
-        self.scannedTagID.text = "Scanning..."
+        scannedItemID.text = "Scanning..."
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,13 +40,22 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         
-        self.nfcSession.alertMessage = "Item detected"
+        var detectedItemName = ""
         
         for message in messages {
             for record in message.records {
-                print((record.payload.advanced(by: 3) = encoding: .utf8))
-            
+                detectedItemName+=String.init(data: record.payload.advanced(by: 3), encoding: .utf8)!
+                print(detectedItemName)
+                
             }
+            
+            DispatchQueue.main.async {
+                self.activeItemList.append(detectedItemName)
+                print(self.activeItemList)
+                self.scannedItemID.text = self.activeItemList.last! + " now in use"
+                
+            }
+            
         }
     }
 }

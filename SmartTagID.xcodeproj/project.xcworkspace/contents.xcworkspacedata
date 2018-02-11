@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SmartTagID.xcodeproj">
+      location = "self:/Users/alexjohnson/Xcode And Swift/SmartTagID/SmartTagID.xcodeproj">
    </FileRef>
 </Workspace>
