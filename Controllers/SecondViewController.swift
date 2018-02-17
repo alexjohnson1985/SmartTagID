@@ -9,8 +9,8 @@
 import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var itemArray : [CellDataModel] = [CellDataModel]()
+    
+    var activeItem : Array = ["Active Item"]
     
     @IBOutlet weak var itemTableView: UITableView!
     
@@ -26,16 +26,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        itemTableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
         
-        cell.itemTextCell.text = itemArray[indexPath.row].itemAdded
-        cell.dateTextCell.text = itemArray[indexPath.row].dateAdded
-        cell.timeTextCell.text = itemArray[indexPath.row].timeAdded
+        cell.itemName.text = activeItem[indexPath.row]
         
         return cell
         
@@ -43,7 +40,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return itemArray.count
+        return activeItem.count
         
     }
 
