@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ford-antenna-medium-58955836e60d2.otf">
+            <string>FordAntenna-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Scan-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SmartTagID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ford-logo-2003-1366x768" translatesAutoresizingMaskIntoConstraints="NO" id="rLT-8h-Lqg">
+                                <rect key="frame" x="34" y="215" width="347" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="02-2018-Transit-Custom" translatesAutoresizingMaskIntoConstraints="NO" id="yIm-f3-rLK">
+                                <rect key="frame" x="0.0" y="311" width="414" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TransitStock" translatesAutoresizingMaskIntoConstraints="NO" id="qnK-DK-Qkd">
+                                <rect key="frame" x="-22" y="20" width="458" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcv-lH-0xN">
+                                <rect key="frame" x="0.0" y="603" width="414" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.14691606160000001" green="0.29636517169999999" blue="0.49414068459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="30"/>
+                                <state key="normal" title="Scan">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="AxT-b4-wQ1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2f-K7-Vcb">
+                                <rect key="frame" x="36" y="265" width="342" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14691606163978577" green="0.2963651716709137" blue="0.49414068460464478" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scan" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="scannedItemID" destination="k2f-K7-Vcb" id="kWL-Vh-jKq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="-329"/>
+        </scene>
+        <!--Active Items-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="SmartTagID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZtL-uP-VLa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.14691606163978577" green="0.2963651716709137" blue="0.49414068460464478" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomCell" rowHeight="95" id="FiH-XP-iMa" customClass="CustomTableViewCell" customModule="SmartTagID" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FiH-XP-iMa" id="A7Z-i6-hoO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="94.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZW-13-jEL">
+                                                    <rect key="frame" x="15" y="15" width="248" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="4lk-Z2-hal"/>
+                                                        <constraint firstAttribute="width" constant="248" id="UTh-GO-Zat"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gv0-q3-o6F">
+                                                    <rect key="frame" x="280" y="50" width="119" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="119" id="LzI-Ac-Kag"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Tay-h7-dwq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Stamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiD-tt-1aK">
+                                                    <rect key="frame" x="280" y="15" width="119" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="119" id="dim-70-Z1s"/>
+                                                        <constraint firstAttribute="height" constant="29" id="oDy-Tk-gz8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GZW-13-jEL" firstAttribute="top" secondItem="A7Z-i6-hoO" secondAttribute="topMargin" constant="4" id="R5I-7O-OQ0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GZW-13-jEL" secondAttribute="bottom" constant="4" id="WBP-eC-dOc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gv0-q3-o6F" secondAttribute="bottom" constant="4" id="Xw1-B8-sls"/>
+                                                <constraint firstItem="GZW-13-jEL" firstAttribute="leading" secondItem="A7Z-i6-hoO" secondAttribute="leadingMargin" id="YiY-cy-kdE"/>
+                                                <constraint firstItem="MiD-tt-1aK" firstAttribute="top" secondItem="A7Z-i6-hoO" secondAttribute="topMargin" constant="4" id="dB4-Ze-X5L"/>
+                                                <constraint firstItem="Gv0-q3-o6F" firstAttribute="trailing" secondItem="A7Z-i6-hoO" secondAttribute="trailingMargin" id="fAL-k0-NXf"/>
+                                                <constraint firstItem="MiD-tt-1aK" firstAttribute="trailing" secondItem="A7Z-i6-hoO" secondAttribute="trailingMargin" id="lhj-Ox-dhP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.14691606160000001" green="0.29636517169999999" blue="0.49414068459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="dateStamp" destination="MiD-tt-1aK" id="I3N-4G-X2p"/>
+                                            <outlet property="itemName" destination="GZW-13-jEL" id="fW0-bT-9SP"/>
+                                            <outlet property="timeStamp" destination="Gv0-q3-o6F" id="PoD-La-1dk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Active Items" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="itemTableView" destination="ZtL-uP-VLa" id="UY8-vB-rR4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="02-2018-Transit-Custom" width="850" height="566"/>
+        <image name="Ford-logo-2003-1366x768" width="683" height="384"/>
+        <image name="TransitStock" width="429" height="268"/>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+    <color key="tintColor" red="0.14691606160000001" green="0.29636517169999999" blue="0.49414068459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>

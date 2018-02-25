@@ -21,6 +21,12 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         super.viewDidLoad()
         
         scannedItemID.text = initialInstruction
+        pushArray()
+    }
+    
+    func pushArray() {
+        let otherVC = SecondViewController()
+        activeItemList = otherVC.activeItem
     }
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {

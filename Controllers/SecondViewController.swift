@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var activeItem : Array = ["Active Item"]
+    var activeItem : Array = ["Active Item 1"]
     
     @IBOutlet weak var itemTableView: UITableView!
     
