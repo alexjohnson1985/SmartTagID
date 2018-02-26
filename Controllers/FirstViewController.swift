@@ -15,18 +15,13 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     var nfcSession: NFCNDEFReaderSession!
     var initialInstruction = "Tap 'Scan' button below to start tagging"
-    var activeItemList: [String] = []
+    var activeItemList : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scannedItemID.text = initialInstruction
-        pushArray()
-    }
-    
-    func pushArray() {
-        let otherVC = SecondViewController()
-        activeItemList = otherVC.activeItem
+        
     }
     
     @IBAction func scanButtonPressed(_ sender: UIButton) {
