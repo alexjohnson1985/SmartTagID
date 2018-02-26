@@ -63,5 +63,6 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
             }
             
         }
+        
     }
 }
