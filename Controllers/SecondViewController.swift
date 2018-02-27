@@ -19,14 +19,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view, typically from a nib.
         itemTableView.delegate = self
         itemTableView.dataSource = self
-        updateActiveItemArray()
+//        updateActiveItemArray()
+        
+        itemTableView.reloadData()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        updateActiveItemArray()
+//        updateActiveItemArray()
         print(activeItem)
         
         itemTableView.reloadData()
@@ -39,11 +41,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    func updateActiveItemArray() {
-        let otherVC = FirstViewController()
-        activeItem = otherVC.activeItemList
-        
-    }
+//    func updateActiveItemArray() {
+//        let otherVC = FirstViewController()
+//        activeItem = otherVC.activeItemList
+//
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

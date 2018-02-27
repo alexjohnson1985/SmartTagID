@@ -62,6 +62,7 @@
                     <tabBarItem key="tabBarItem" title="Scan" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="scannedItemID" destination="k2f-K7-Vcb" id="kWL-Vh-jKq"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="segue" id="SEB-Be-DdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -138,11 +139,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvX-19-4vW">
+                                <rect key="frame" x="184" y="695" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="9pv-A4-QxB" kind="show" id="qiU-XI-Wow"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Active Items" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="H1h-Zh-g6Z"/>
                     <connections>
                         <outlet property="itemTableView" destination="ZtL-uP-VLa" id="UY8-vB-rR4"/>
                     </connections>
@@ -177,5 +187,9 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SEB-Be-DdB"/>
+        <segue reference="qiU-XI-Wow"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.14691606160000001" green="0.29636517169999999" blue="0.49414068459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
