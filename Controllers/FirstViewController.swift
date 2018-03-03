@@ -24,6 +24,13 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        scannedItemID.text = initialInstruction
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let TableView = segue.destination as! SecondViewController
         TableView.activeItem = activeItemList
