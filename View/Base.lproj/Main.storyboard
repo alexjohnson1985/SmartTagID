@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="627" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.13431262969999999" green="0.27331891660000002" blue="0.45492321250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="22"/>
                                 <state key="normal" title="Scan">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -48,13 +48,6 @@
                                     <action selector="scanButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="AxT-b4-wQ1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2f-K7-Vcb">
-                                <rect key="frame" x="36" y="310" width="342" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inventory Management" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUr-aY-lQV">
                                 <rect key="frame" x="71" y="22" width="343" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -67,6 +60,24 @@
                                 <rect key="frame" x="13" y="30" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YI-aN-Hbk">
+                                <rect key="frame" x="168" y="399" width="79" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="22"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetScannedItemID:" destination="9pv-A4-QxB" eventType="touchUpInside" id="jaO-kr-zQM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2f-K7-Vcb">
+                                <rect key="frame" x="13" y="244" width="389" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13431262969970703" green="0.27331891655921936" blue="0.45492321252822876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -110,7 +121,7 @@
                                                         <constraint firstAttribute="height" constant="65" id="4lk-Z2-hal"/>
                                                         <constraint firstAttribute="width" constant="248" id="UTh-GO-Zat"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -120,7 +131,7 @@
                                                         <constraint firstAttribute="width" constant="119" id="LzI-Ac-Kag"/>
                                                         <constraint firstAttribute="height" constant="30" id="Tay-h7-dwq"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -130,7 +141,7 @@
                                                         <constraint firstAttribute="width" constant="119" id="dim-70-Z1s"/>
                                                         <constraint firstAttribute="height" constant="29" id="oDy-Tk-gz8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

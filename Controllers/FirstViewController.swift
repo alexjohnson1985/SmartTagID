@@ -12,6 +12,11 @@ import CoreNFC
 class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     @IBOutlet weak var scannedItemID: UILabel!
+    @IBAction func resetScannedItemID(_ sender: Any) {
+        
+        scannedItemID.text = initialInstruction
+        
+    }
     
     var nfcSession: NFCNDEFReaderSession!
     var initialInstruction = "Tap 'Scan' below to start"
