@@ -14,7 +14,7 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     @IBOutlet weak var scannedItemID: UILabel!
     
     var nfcSession: NFCNDEFReaderSession!
-    var initialInstruction = "Tap 'Scan' button below to start tagging"
+    var initialInstruction = "Tap 'Scan' below to start"
     var activeItemList : [String] = []
     
     override func viewDidLoad() {
