@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Scan-->
+        <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SmartTagID" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +59,10 @@
                         <color key="backgroundColor" red="0.14691606163978577" green="0.2963651716709137" blue="0.49414068460464478" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="rss" springLoaded="YES" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-4"/>
+                        <color key="badgeColor" red="0.13431262969999999" green="0.27331891660000002" blue="0.45492321250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="scannedItemID" destination="k2f-K7-Vcb" id="kWL-Vh-jKq"/>
                         <segue destination="8rJ-Kc-sve" kind="show" identifier="segue" id="SEB-Be-DdB"/>
@@ -69,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="748" y="-329"/>
         </scene>
-        <!--Active Items-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="SmartTagID" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +146,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Active Items" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="text-list" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <color key="badgeColor" red="0.13431262969999999" green="0.27331891660000002" blue="0.45492321250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="H1h-Zh-g6Z"/>
                     <connections>
                         <outlet property="itemTableView" destination="ZtL-uP-VLa" id="UY8-vB-rR4"/>
@@ -160,7 +166,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.13431262969999999" green="0.27331891660000002" blue="0.45492321250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -176,8 +183,8 @@
         <image name="02-2018-Transit-Custom" width="850" height="566"/>
         <image name="Ford-logo-2003-1366x768" width="683" height="384"/>
         <image name="TransitStock" width="429" height="268"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="rss" width="30" height="30"/>
+        <image name="text-list" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lzU-1b-eKA"/>
