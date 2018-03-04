@@ -13,9 +13,10 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     @IBOutlet weak var scannedItemID: UILabel!
     @IBAction func resetScannedItemID(_ sender: Any) {
-        
         scannedItemID.text = initialInstruction
-        
+    }
+    @IBAction func signOut1ButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SignOut1", sender: self)
     }
     
     var nfcSession: NFCNDEFReaderSession!
@@ -36,12 +37,12 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let TableView = segue.destination as! SecondViewController
-        TableView.activeItem = activeItemList
-        
-    }
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let TableView = segue.destination as! SecondViewController
+//        TableView.activeItem = activeItemList
+//
+//    }
+
     @IBAction func scanButtonPressed(_ sender: UIButton) {
         self.nfcSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         // A custom description that helps users understand how they can use NFC reader mode in your app.

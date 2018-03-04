@@ -12,6 +12,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var activeItem : [String] = []
     
+    @IBAction func signOut2ButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SignOut2", sender: self)
+    }
     @IBOutlet weak var itemTableView: UITableView!
     
     override func viewDidLoad() {
