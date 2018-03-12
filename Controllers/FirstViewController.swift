@@ -13,7 +13,7 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     @IBOutlet weak var scannedItemID: UILabel!
     @IBOutlet weak var scanButton: UIButton!
-    @IBAction func resetScannedItemID(_ sender: Any) {
+    @IBAction func resetButton(_ sender: Any) {
         scannedItemID.text = initialInstruction
     }
     @IBAction func signOut1ButtonPressed(_ sender: Any) {
@@ -58,9 +58,6 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-    }
-    
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         
         var detectedItemName = ""
@@ -88,4 +85,11 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         
     }
     
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+//        DispatchQueue.main.async {
+//
+//            self.scannedItemID.text = self.initialInstruction
+//
+//        }
+    }
 }
