@@ -43,7 +43,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
+        
         cell.itemName?.text = activeItemList?[indexPath.row]
+        cell.dateStamp?.text = dateStampArray?[indexPath.row]
+        cell.timeStamp?.text = timeStampArray?[indexPath.row]
+        
         return cell
         
     }

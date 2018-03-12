@@ -18,11 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Thread.sleep(forTimeInterval: 1.0)
         
-        if let activeItem = fetchData() {
+        if let activeItem = fetchItemData() {
             activeItemList = activeItem
         } else {
             activeItemList = [String]()
         }
+        
+        if let dateStamp = fetchDateData() {
+            dateStampArray = dateStamp
+        } else {
+            dateStampArray = [String]()
+        }
+        
+        if let timeStamp = fetchTimeData() {
+            timeStampArray = timeStamp
+        } else {
+            timeStampArray = [String]()
+        }
+        
         return true
     }
 
@@ -35,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-        saveData(activeItemList: activeItemList!)
+        saveItemData(activeItemList: activeItemList!)
+        saveDateData(dateStampArray: dateStampArray!)
+        saveItemData(activeItemList: timeStampArray!)
         
     }
 
@@ -50,7 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
-        saveData(activeItemList: activeItemList!)
+        saveItemData(activeItemList: activeItemList!)
+        saveDateData(dateStampArray: dateStampArray!)
+        saveTimeData(timeStampArray: timeStampArray!)
         
     }
 

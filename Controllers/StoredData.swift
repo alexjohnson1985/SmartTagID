@@ -9,15 +9,43 @@
 import Foundation
 
 var activeItemList : [String]?
-let intialInstruction = "Tap 'Scan' below to start"
+var dateStampArray : [String]?
+var timeStampArray : [String]?
 
-func saveData(activeItemList:[String]) {
+func saveItemData(activeItemList:[String]) {
     UserDefaults.standard.set(activeItemList, forKey: "activeItemList")
 }
 
-func fetchData() -> [String]? {
+func saveDateData(dateStampArray:[String]) {
+    UserDefaults.standard.set(dateStampArray, forKey: "dateStampArray")
+}
+
+func saveTimeData(timeStampArray:[String]) {
+    UserDefaults.standard.set(timeStampArray, forKey: "timeStampArray")
+}
+
+func fetchItemData() -> [String]? {
     if let activeItem = UserDefaults.standard.array(forKey: "activeItemList") as? [String] {
         return activeItem
+    }
+    else {
+        return nil
+         }
+    
+    }
+    
+func fetchDateData() -> [String]? {
+    if let dateStamp = UserDefaults.standard.array(forKey: "dateStampArray") as? [String] {
+        return dateStamp
+    }
+    else {
+        return nil
+         }
+    }
+
+func fetchTimeData() -> [String]? {
+    if let timeStamp = UserDefaults.standard.array(forKey: "timeStampArray") as? [String] {
+        return timeStamp
     }
     else {
         return nil

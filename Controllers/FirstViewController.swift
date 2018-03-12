@@ -61,15 +61,20 @@ class FirstViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         
         var detectedItemName = ""
+        let date = "\(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none))"
+        let time = "\(DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short))"
         
         for message in messages {
             for record in message.records {
                 
                 detectedItemName+=String.init(data: record.payload.advanced(by: 3), encoding: .utf8)!
                 activeItemList?.append(detectedItemName)
+                dateStampArray?.append(date)
+                timeStampArray?.append(time)
                 
-                print(detectedItemName)
                 print(activeItemList!)
+                print(dateStampArray!)
+                print(timeStampArray!)
                 
             }
             
