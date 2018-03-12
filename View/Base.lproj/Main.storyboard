@@ -171,9 +171,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.13431262969970703" green="0.27331891655921936" blue="0.45492321252822876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="dateStamp" destination="MiD-tt-1aK" id="I3N-4G-X2p"/>
-                                            <outlet property="itemName" destination="GZW-13-jEL" id="fW0-bT-9SP"/>
-                                            <outlet property="timeStamp" destination="Gv0-q3-o6F" id="PoD-La-1dk"/>
+                                            <outlet property="dateStampLabel" destination="MiD-tt-1aK" id="wMD-1B-Sdj"/>
+                                            <outlet property="itemNameLabel" destination="GZW-13-jEL" id="stU-LX-YoU"/>
+                                            <outlet property="timeStampLabel" destination="Gv0-q3-o6F" id="sH0-av-rUj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -321,7 +321,7 @@
         <image name="list-simple-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3yo-TQ-8wH"/>
+        <segue reference="2Tm-SK-02T"/>
         <segue reference="SEB-Be-DdB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.14691606160000001" green="0.29636517169999999" blue="0.49414068459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

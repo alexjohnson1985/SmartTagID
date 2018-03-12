@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         saveItemData(activeItemList: activeItemList!)
         saveDateData(dateStampArray: dateStampArray!)
-        saveItemData(activeItemList: timeStampArray!)
+        saveTimeData(timeStampArray: timeStampArray!)
         
     }
 

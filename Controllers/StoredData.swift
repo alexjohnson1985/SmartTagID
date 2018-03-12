@@ -31,7 +31,6 @@ func fetchItemData() -> [String]? {
     else {
         return nil
          }
-    
     }
     
 func fetchDateData() -> [String]? {

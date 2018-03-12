@@ -28,8 +28,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print(activeItemList!)
-        
         itemTableView.reloadData()
         
     }
@@ -44,9 +42,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
         
-        cell.itemName?.text = activeItemList?[indexPath.row]
-        cell.dateStamp?.text = dateStampArray?[indexPath.row]
-        cell.timeStamp?.text = timeStampArray?[indexPath.row]
+        cell.itemNameLabel?.text = activeItemList?[indexPath.row]
+        cell.dateStampLabel?.text = dateStampArray?[indexPath.row]
+        cell.timeStampLabel?.text = timeStampArray?[indexPath.row]
         
         return cell
         
@@ -66,6 +64,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if editingStyle == .delete {
             activeItemList?.remove(at: indexPath.row)
+            dateStampArray?.remove(at: indexPath.row)
+            timeStampArray?.remove(at: indexPath.row)
+            
             itemTableView.reloadData()
         }
     }
