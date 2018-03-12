@@ -10,6 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "SignedInSegue", sender: self)
@@ -21,6 +23,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        registerButton.layer.cornerRadius = 5
+        signInButton.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {

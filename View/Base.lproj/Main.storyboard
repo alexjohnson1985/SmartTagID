@@ -36,18 +36,6 @@
                                 <rect key="frame" x="-12" y="89" width="438" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcv-lH-0xN">
-                                <rect key="frame" x="0.0" y="627" width="414" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.13431262969999999" green="0.27331891660000002" blue="0.45492321250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="22"/>
-                                <state key="normal" title="Scan">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="scanButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="AxT-b4-wQ1"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INVENTORY MANAGEMENT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUr-aY-lQV">
                                 <rect key="frame" x="71" y="22" width="343" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -90,6 +78,18 @@
                                     <segue destination="QpK-0v-qQc" kind="show" identifier="SignOut1" id="3yo-TQ-8wH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcv-lH-0xN">
+                                <rect key="frame" x="24" y="605" width="367" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.37432795763015747" green="0.65387308597564697" blue="0.69804996252059937" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="22"/>
+                                <state key="normal" title="Scan">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="nd4-6Y-XrH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13431262969970703" green="0.27331891655921936" blue="0.45492321252822876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -99,6 +99,7 @@
                         <color key="badgeColor" red="0.13431262969999999" green="0.27331891660000002" blue="0.45492321250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="scanButton" destination="Pcv-lH-0xN" id="vHv-vt-h5O"/>
                         <outlet property="scannedItemID" destination="k2f-K7-Vcb" id="kWL-Vh-jKq"/>
                         <segue destination="8rJ-Kc-sve" kind="show" identifier="segue" id="SEB-Be-DdB"/>
                     </connections>
@@ -242,14 +243,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foX-k9-bm1">
-                                <rect key="frame" x="34" y="206" width="347" height="30"/>
+                                <rect key="frame" x="34" y="182" width="347" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.059597335760000002" green="0.17602661250000001" blue="0.41178825499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuZ-WQ-5Sm">
-                                <rect key="frame" x="208" y="421" width="173" height="40"/>
+                                <rect key="frame" x="208" y="458" width="173" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.37432795763015747" green="0.65387308597564697" blue="0.69804996252059937" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="16"/>
@@ -260,8 +261,15 @@
                                     <action selector="signInButtonPressed:" destination="QpK-0v-qQc" eventType="touchUpInside" id="Z3d-YW-1r1"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-Zk-Nbg">
+                                <rect key="frame" x="34" y="230" width="347" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.059597335760000002" green="0.17602661250000001" blue="0.41178825499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-Hm-WsJ">
-                                <rect key="frame" x="34" y="421" width="173" height="40"/>
+                                <rect key="frame" x="34" y="458" width="173" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="16"/>
@@ -269,18 +277,13 @@
                                     <color key="titleColor" red="0.059597335760000002" green="0.17602661250000001" blue="0.41178825499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-Zk-Nbg">
-                                <rect key="frame" x="34" y="259" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.059597335760000002" green="0.17602661250000001" blue="0.41178825499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="FordAntenna-Medium" family="Ford Antenna" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.92548149820000003" green="0.92548429970000001" blue="0.92549055810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="2lR-Ro-GXr"/>
                     </view>
                     <connections>
+                        <outlet property="registerButton" destination="XYI-Hm-WsJ" id="qab-hj-5ep"/>
+                        <outlet property="signInButton" destination="MuZ-WQ-5Sm" id="vQG-hY-4T8"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="SignedInSegue" action="showDetailViewController:sender:" id="wbL-hc-p0O"/>
                     </connections>
                 </viewController>
@@ -318,7 +321,7 @@
         <image name="list-simple-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Tm-SK-02T"/>
+        <segue reference="3yo-TQ-8wH"/>
         <segue reference="SEB-Be-DdB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.14691606160000001" green="0.29636517169999999" blue="0.49414068459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

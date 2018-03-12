@@ -10,8 +10,6 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var activeItem : [String] = []
-    
     @IBAction func signOut2ButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "SignOut2", sender: self)
     }
@@ -22,7 +20,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view, typically from a nib.
         itemTableView.delegate = self
         itemTableView.dataSource = self
-//        updateActiveItemArray()
         
         itemTableView.reloadData()
         
@@ -31,8 +28,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        updateActiveItemArray()
-        print(activeItem)
+        print(activeItemList!)
         
         itemTableView.reloadData()
         
@@ -44,24 +40,30 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-//    func updateActiveItemArray() {
-//        let otherVC = FirstViewController()
-//        activeItem = otherVC.activeItemList
-//
-//    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
-        cell.itemName.text = activeItem[indexPath.row]
+        cell.itemName?.text = activeItemList?[indexPath.row]
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return activeItem.count
+        if let activeItem = activeItemList {
+            return activeItem.count
+        } else {
+            return 0
+        }
         
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            activeItemList?.remove(at: indexPath.row)
+            itemTableView.reloadData()
+        }
     }
 
 }
